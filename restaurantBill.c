@@ -22,3 +22,27 @@
 
 */
 
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+struct menuItems{
+    char rand_meal[50];
+    float price;
+
+};
+
+struct menuItems menu[] = {
+    {"Salad", 9.95},
+    {"Soup", 4.55},
+    {"Sandwich", 13.25},
+    {"Pizza", 22.35}
+};
+
+int main(){
+    srand(time(NULL));
+    int rand_num = rand() % 4;
+
+    printf("random item frm menu: %s, %.2f", menu[rand_num].rand_meal, menu[rand_num].price);
+
+}
