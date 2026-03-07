@@ -50,12 +50,14 @@ int main(int argc, char *argv[]){
     int rand_num = rand() % 4;
 
     float price = menu[rand_num].price;
-    float tax = atof(argv[1]);
-    float tip = atof(argv[2]);
+    float tax = 0;
+    float tip = 0;
+
+    scanf("%f %f", &tax, &tip);
 
     float total = total_bill(tax, tip, price);
 
-    
+
 
     printf("Menu Item: %s\n", menu[rand_num].item);
     printf("Price: $%.2f\n", menu[rand_num].price);
@@ -63,6 +65,7 @@ int main(int argc, char *argv[]){
     printf("Tip:   %d%%\n", (int)tip);
     printf("Total: $%.2f\n", total);
 
+    fprintf(stderr, "Tip: %d%%\n", (int)tip);
     
 
     
