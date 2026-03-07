@@ -31,17 +31,40 @@ int menuChoice(){
     return choice;
 
     }
-    int playGame(int maxNum,int *guesses){  
+
+void playGame(int maxNum,int *guesses){
+    int target = rand() % 10 + 1;
+    char input[10];
+    *guesses = 0;
+
+    while(1){
+        printf("Your guess: ");
+        scanf("%s", input);
+
+        if(input[0] == 'q'){
+        *guesses = -1;
+        printf("You have quit the game!\n");
+        break;
+        }
+
+        int guess = atoi(input);
+        (*guesses)++;
+        if(guess == target){
+            printf("YOU WON!!!\n");
+            break;
+            }
+
+        if(guess > target){
+            printf("Lower!\n");
+            }
+        else if(guess < target){
+            printf("Higher!\n");
+            }
 
 
+        }   
     }
 
-    int changeNum(maxNum){
-
-    }
-    int printScore(int totalGames, int guesses[]){
-
-    }
 
 
 int main(){
@@ -49,24 +72,19 @@ int main(){
     
 
     int maxNum = 10;
-    int guess;
+    int guesses[50];
+    int totalGames = 0;
     
 
-    While (1){
-        choice = menuChoice();
+    while (1){
+        int choice = menuChoice();
 
         if(choice == 1){
-            playGame(maxNum);
-        }
-        else if(choice == 2){
-            maxNum = changeNum(maxNum);
-        }
-        else if(choice == 3) {
-            printScore();
-            break;
+            playGame(maxNum, &guesses[totalGames]);
+            totalGames++;
         }
         else{
-            printf("Please select a option (1-3)")
+            printf("Please select a option (1-3)");
         }
     }
 
