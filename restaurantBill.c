@@ -43,6 +43,5 @@ int main(){
     srand(time(NULL));
     int rand_num = rand() % 4;
 
-    printf("random item frm menu: %s, %.2f", menu[rand_num].rand_meal, menu[rand_num].price);
-
+    
 }
