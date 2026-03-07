@@ -40,11 +40,9 @@ struct menuItems menu[] = {
 };
 
 float total_bill(float tax, float tip, float price){
-    float tax_perc = tax / 100;
-    float tip_perc = tip / 100;
-    
-
-    return (price * tax_perc) + (price * tip_perc) + price;
+    float tax_p = tax / 100;
+    float tip_p = tip / 100;
+    return (price * tax_p) + (price * tip_p) + price;
 }
 
 int main(int argc, char *argv[]){
@@ -57,8 +55,13 @@ int main(int argc, char *argv[]){
 
     float total = total_bill(tax, tip, price);
 
-    printf("random item frm menu: %s, %.2f\n", menu[rand_num].item, menu[rand_num].price);
-    printf("total is %.2f\n", total);
+    
+
+    printf("Menu Item: %s\n", menu[rand_num].item);
+    printf("Price: $%.2f\n", menu[rand_num].price);
+    printf("Tax:   %d%%\n", (int)tax);
+    printf("Tip:   %d%%\n", (int)tip);
+    printf("Total: $%.2f\n", total);
 
     
 
