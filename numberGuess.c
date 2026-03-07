@@ -25,7 +25,9 @@ create loop until user decides to quit
 int menuChoice(){
     int choice;
     printf("Welcome to Number Guessing Game!\n");
-    printf("Enter (1) to start \n Enter(2) to change max number \n  Enter (3) to quit the game \n");    
+    printf("Enter (1) to start \n");
+    printf("Enter (2) to change max number \n");
+    printf("Enter (3) to quit \n");   
     scanf("%d\n", &choice);
 
     return choice;
@@ -93,6 +95,9 @@ int main(){
         if(choice == 1){
             playGame(maxNum, &guesses[totalGames]);
             totalGames++;
+        }
+        else if( choice == 2){
+            maxNum == changeNum(maxNum);
         }
         else{
             printf("Please select a option (1-3)");
