@@ -65,6 +65,17 @@ void playGame(int maxNum,int *guesses){
         }   
     }
 
+int changeNum(int currentMax) {
+    int newMax;
+    printf("Enter new max number (positive): ");
+    scanf("%d", &newMax);
+    if (newMax > 0) return newMax;
+    printf("Invalid, keeping old max.\n");
+    return currentMax;
+}
+
+int printScore();
+
 
 
 int main(){
