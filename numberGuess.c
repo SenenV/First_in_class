@@ -76,7 +76,7 @@ int changeNum(int currentMax) {
     return currentMax;
 }
 
-int printScore();
+
 
 
 
